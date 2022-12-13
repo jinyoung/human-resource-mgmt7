@@ -104,7 +104,7 @@ public class VacationDaysStatusQueryController {
     }
 
     @MessageMapping("vacationDaysStatuses.{id}.get")
-    public Flux<VacationReadModel> subscribeSingle(
+    public Flux<VacationDaysStatus> subscribeSingle(
         @DestinationVariable String id
     ) {
         VacationDaysStatusSingleQuery query = new VacationDaysStatusSingleQuery();

@@ -113,7 +113,7 @@ public class SearchCalendarQueryController {
     }
 
     @MessageMapping("calendars.{id}.get")
-    public Flux<VacationReadModel> subscribeSingle(
+    public Flux<CalendarReadModel> subscribeSingle(
         @DestinationVariable String id
     ) {
         SearchCalendarSingleQuery query = new SearchCalendarSingleQuery();
