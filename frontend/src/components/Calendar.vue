@@ -131,6 +131,8 @@
             addCalendarDiagram: false,
         }),
         created(){
+            if(this.isNew) return;
+
             var websocketUrl = new URL(window.location.href);
 
             websocketUrl.protocol = "wss";
@@ -163,7 +165,6 @@
             client.connect().subscribe({
                 onComplete: socket => {
                 let requestedMsg = 10;
-                let processedMsg = 0;
 
                 // console.log("connected to rsocket"); // debug
                 const endpoint = "calendars.1.get"
@@ -192,8 +193,8 @@
                 onError: error => {
                     console.error(error);
                 },
-                onSubscribe: cancel => {
-                }
+                // onSubscribe: cancel => {
+                // }
             });
 
         },

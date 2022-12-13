@@ -11,22 +11,37 @@ docker-compose up
 
 '''
 cd common-api
-mvn install
+mvn clean install
 cd ..
 
 cd vacation
-mvn spring-boot:run
+mvn clean spring-boot:run
 cd ..
 
 cd schedule
-mvn spring-boot:run
+mvn clean spring-boot:run
 cd ..
 
 cd employee
-mvn spring-boot:run
+mvn clean spring-boot:run
 cd ..
 
+
+cd gateway
+mvn clean spring-boot:run
+cd ..
+
+cd frontend
+npm i
+npm run serve
+
 '''
+
+## Test By UI
+Head to http://localhost:8088 with a web browser
+
+## Test Rest APIs
+
 
 ## Test RSocket APIs
 
